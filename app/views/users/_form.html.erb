@@ -1,36 +1,10 @@
-<%= form_for user do |f| %>
-<p>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %>
-</p>
+<%= @role %><br />
+<%= @user.name %><br />
+Mood: <%= @user.mood %><br />
+Height: <%= @user.height %><br />
+Tickets: <%= @user.tickets %><br />
 
-<p>
-  <%= f.label :nausea %><br>
-  <%= f.number_field :nausea %>
-</p>
+<%= link_to "See attractions", attractions_path %>
 
-<p>
-  <%= f.label :happiness %><br>
-  <%= f.number_field :happiness %>
-</p>
 
-<p>
-  <%= f.label :tickets %><br>
-  <%= f.number_field :tickets %>
-</p>
-
-<p>
-  <%= f.label :height %><br>
-  <%= f.number_field :height %>
-</p>
-
-<p>
-  <%= f.label :admin %><br>
-  <%= f.check_box :admin %>
-</p>
-
-<p>
-  <%= f.submit %>
-</p>
-
-<% end %>
+<%= link_to "Log Out", logout_path %>

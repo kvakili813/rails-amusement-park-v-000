@@ -1,10 +1,19 @@
-<% if @user.admin == true %>
-  <h1>ADMIN</h1>
+<h3>User Show</h3>
+<% if flash[:alert] %>
+<%= flash[:alert] %>
 <% end %>
-Name: <%= @user.name %><br><br>
-Tickets: <%= @user.tickets %><br><br>
-Mood: <%= @user.mood %><br><br>
-Height: <%= @user.height %> inches<br><br>
 
-<%= link_to "Edit", edit_user_path(@user) %><br><br>
+<% if @user.admin %>
+ <p>"ADMIN"</p>
+ <% end %>
+
+
+Name:<%= @user.name %>
+Height:<%=@user.height %>
+Mood: <%= @user.mood %>
+Nausea: <%= @user.nausea %>
+Tickets: <%= @user.tickets %>
+Admin: <%= @user.admin %>
+
+<%= link_to "Log In", signin_path %>
 <%= link_to "See attractions", attractions_path %>
